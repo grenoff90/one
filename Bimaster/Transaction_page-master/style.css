@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: #fcd535;
+    --second-color: rgb(240, 185, 11);
+    --background-color: rgb(24, 26, 32);
+    --text-color: #eaecef;
+    --sidebar-color: rgb(132, 142, 156);
+    --border-color: #e5e7eb;
+
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+header {
+    background-color: var(--background-color);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+header .left {
+    display: flex;
+    align-items: center;
+}
+
+header .left .logo {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+
+
+header .left ul {
+    display: flex;
+    align-items: center;
+}
+
+header .left ul li a {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: 0.4s;
+}
+
+header .left ul li a i {
+    font-size: 8px;
+    margin-left: 5px;
+}
+
+header .right ul {
+    display: flex;
+    align-items: center;
+}
+
+header .right ul li:not(li.btn) {
+    padding: 10px 15px;
+    font-size: 14px;
+    
+}
+
+header .right ul li i {
+    color: var(--text-color);
+    transition: 0.4s;
+}
+
+header .right ul li a {
+    transition: 0.4s;
+}
+
+
+header .right ul li.btn a {
+    color: var(--background-color);
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+header .right ul li.btn i {
+    margin-right: 5px;
+    color: var(--background-color);
+}
+
+header .right ul li.user a i {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-size: 12px;
+}
+
+header .right ul li:not(li.user, li.btn):hover i {
+    color: var(--main-color);
+} 
+
+header ul li:hover a {
+    color: var(--main-color);
+}
+
+/* header */
+main {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+aside {
+    width: 240px;
+}
+
+aside ul {
+    padding: 25px 0;
+    position: relative;
+}
+
+
+aside ul.top::after {
+    content: "";
+    width: 200px;
+    height: 2px ;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    background-color: rgb(132 142 156 / 16%);
+}
+
+aside ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0 15px 24px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: var(--sidebar-color);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: 0.4s;
+}
+
+aside ul li a:hover {
+    background-color: rgb(132 142 156 / 16%);
+}
+
+aside ul li.active a {
+    background-color: rgb(132 142 156 / 16%);
+    color: var(--text-color);
+}
+
+aside ul li a span {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* content */
+main .content {
+    padding: 40px 30px;
+}
+
+main .content > .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+main .content > .head  h3 {
+    color: var(--text-color);
+    font-size: 30px;
+}
+
+main .content > .head a {
+    color: var(--sidebar-color);
+    font-size: 14px;
+}
+
+main .content .options ul {
+    display: flex;
+    align-items: center;
+}
+
+main .content .options ul li {
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-right: 15px;
+    border-radius: 4px;
+    color: rgb(132, 142, 156);
+}
+
+main .content .options ul li.active {
+    background-color: rgb(43, 49, 57);
+    color: var(--text-color);
+}
+
+main .content .inputs {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 1550px) {
+    main .content .inputs {
+        flex-direction: column;
+        align-items: flex-start;
+    } 
+}
+
+main .content .inputs .left {
+    display: flex;
+    align-items: center;
+}
+
+main .content .inputs .left .input {
+    height: 72px;
+    margin-right: 10px;
+}
+
+main .content .inputs .left .input label {
+    display: block;
+    color: var(--sidebar-color);
+    margin-bottom: 10px;
+}
+
+main .content .inputs .left .input select {
+    height: 40px;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid rgb(132 142 156 / 39%);
+    border-radius: 4px;
+    appearance: none;
+}
+
+main .content .inputs .left .input input {
+    height: 40px;
+    border: none;
+    width: 170px;
+    padding: 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid rgb(132 142 156 / 39%);
+    border-radius: 4px;
+    appearance: none;
+}
+
+main .content .inputs .left .input select:focus,
+main .content .inputs .left .input input:focus {
+    outline: none;
+}
+main .content .inputs .left .input input::placeholder {
+    color: #eaecefad;
+}
+
+main .content .inputs .left .input .select-container {
+    position: relative;
+    display: flex;
+}
+main .content .inputs .left .input .select-container i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #eaecefad;
+    font-size: 10px;
+}
+
+main .content .inputs .right a:first-child {
+    color: var(--second-color);
+    text-decoration: underline;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+main .content .inputs .right a:last-child {
+    color: var(--sidebar-color);
+    font-size: 14px;
+}
+@media (max-width: 1550px) {
+    main .content .inputs .right {
+        margin-top: 30px;
+    }
+}
+/* table */
+.table {
+    margin-top: 30px;
+}
+.table .head {
+    height: 40px;
+    background-color: #2b3139;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.table .head span {
+    width: calc(100% / 8);
+    color: var(--sidebar-color);
+    font-size: 12px;
+}
+
+.table .body .row {
+    transition: 0.4s;
+    padding: 0 10px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(132 142 156 / 38%);
+}
+.table .body .row:hover {
+    background-color: rgb(11, 14, 17);
+}
+
+.table .body .row > span {
+    width: calc(100% / 8);
+    color: var(--sidebar-color);
+    font-size: 14px;
+}
+
+.table .body .row > span.custom {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 50px;
+    align-items: flex-start;
+}
+.table .body .row > span.custom .top {
+    display: flex;
+    flex-direction: column;
+}
+.table .body .row > span.custom .top i {
+    margin-top: 3px;
+}
+.table .body .row > span.custom .bottom {
+    display: flex;
+    justify-content: flex-end;
+    width: 88px;
+}
+
+.table .body .row > span:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table .body .row > span:last-child i {
+    color: var(--text-color);
+    padding: 5px;
+    background-color: rgb(11, 14, 17);
+    border-radius: 50%;
+}
+.table .body .row:hover > span:last-child i {
+    background-color: var(--sidebar-color);
+}
+/* content */

@@ -1,0 +1,485 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: #fcd535;
+    --background-color: rgb(24, 26, 32);
+    --text-color: #eaecef;
+    --sidebar-color: rgb(132, 142, 156);
+    --border-color: #e5e7eb;
+
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+@media(MIN-WIDTH: 992PX){
+    .container{
+        width: 970PX;
+    }
+}
+@media(MIN-WIDTH: 1200PX){
+    .container{
+        width: 1170px;
+    }
+}
+@media(MIN-WIDTH: 1500px){
+    .container{
+        width: 1400px;
+    }
+}
+@media(MIN-WIDTH: 1700px){
+    .container{
+        width: 1650px;
+    }
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+header {
+    background-color: var(--background-color);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    /* width: fit-content; */
+}
+
+header .left {
+    display: flex;
+    align-items: center;
+}
+
+header .left .logo {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+
+
+header .left ul {
+    display: flex;
+    align-items: center;
+}
+
+header .left ul li a {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: 0.4s;
+}
+
+header .left ul li a i {
+    font-size: 8px;
+    margin-left: 5px;
+}
+
+header .right ul {
+    display: flex;
+    align-items: center;
+}
+
+header .right ul li:not(li.btn) {
+    padding: 10px 15px;
+    font-size: 14px;
+    
+}
+
+header .right ul li i {
+    color: var(--text-color);
+    transition: 0.4s;
+}
+
+header .right ul li a {
+    transition: 0.4s;
+}
+
+
+header .right ul li.btn a {
+    color: var(--background-color);
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+header .right ul li.btn i {
+    margin-right: 5px;
+    color: var(--background-color);
+}
+
+header .right ul li.user a i {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-size: 12px;
+}
+
+header .right ul li:not(li.user, li.btn):hover i {
+    color: var(--main-color);
+} 
+
+header ul li:hover a {
+    color: var(--main-color);
+}
+
+/* main */
+
+main .overview {
+    display: flex;
+    align-items: center;
+}
+
+main  .head {
+    margin-top: 10px;
+}
+main  .head span {
+    color: var(--sidebar-color);
+}
+
+main  .head span i {
+    margin-right: 20px;
+}
+
+main  .head h3 {
+    color: var(--text-color);
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+main .overview {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    border-bottom: 1px solid rgb(132 142 156 / 35%);
+}
+
+main .overview .left {
+    width: 60%;
+}
+main .overview .right {
+    width: 40%;
+}
+main .overview .right .balance {
+    width: calc(100% / 2);
+}
+main .overview .left > h3 {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+main .overview .left .num {
+    display: flex;
+    align-items: center;
+}
+main .overview .left .num h3 {
+    font-size: 24px;
+    color: var(--text-color);
+    margin-right: 5px;
+}
+
+main .overview .left .num span {
+    font-size: 24px;
+    color: var(--sidebar-color);
+}
+
+main .overview .left h3 i {
+    background-color: rgb(43, 49, 57);
+    padding: 5px;
+    color: var(--sidebar-color);
+    font-size: 14px;
+}
+
+main .overview .right {
+    display: flex;
+    align-items: center;
+}
+
+main .overview .right .top {
+    margin-bottom: 15px;
+}
+main .overview .right .top span {
+    color: var(--text-color);
+}  
+
+main .overview .right  h3 {
+    margin-bottom: 5px;
+}
+
+main .overview .right  h3,
+main .overview .right  span {
+    color: #0ECB81;
+}
+/* charts */
+.charts .container .days {
+    padding: 20px 0;
+}
+.charts .container .days ul {
+    display: flex;
+    align-items: center;
+
+}
+
+.charts .container .days ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--sidebar-color);
+}
+
+.charts .container .days ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.charts .container .days ul li.active {
+    color: var(--main-color);
+    background-color: #52360c73;
+    border-radius: 4px;
+}
+/* charts */
+
+.charts .head {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.charts .head h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--text-color);
+    margin-right: 15px;
+    margin-top: 0;
+}
+
+.charts .head span {
+    color: #0ECB81;
+    font-size: 14px;
+}
+
+.canvaces {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.canvaces .right {
+    display: flex;
+    align-items: center;
+    width: 950px;
+    justify-content: space-between;
+}
+
+
+
+.canvaces .left {
+    width: 100%;
+}
+
+
+.charts .cumulative {
+    height: 250px;
+    width: 950px;
+}
+
+.charts .cumulative .head {
+    margin-bottom: 30px;
+}
+
+.charts .Asset {
+    height: 250px;
+    width: 384px;
+    position: relative;
+    margin-top: 160px;
+}
+
+.charts .Asset .contain {
+    width: 177px;
+    height: 177px;
+}
+
+@media (min-width:1500px) {
+    .canvaces {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+        margin-top: 50px;
+    }
+    .canvaces .right {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+
+    .charts .Asset {
+        margin-top: 0;
+    }
+}
+
+#custom {
+    position: absolute;
+    top: 38%;
+    right: 32px;
+}
+
+#custom ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#custom ul li p {
+    color: var(--text-color);
+}
+
+#custom ul li span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+    margin-right: 3px;
+}
+
+.charts .Asset .head {
+    margin-bottom: 65px;
+    font-size: 20px
+}
+
+.charts .Asset .head i {
+    color: rgb(132, 142, 156);
+    font-size: 14px;
+}
+
+.charts .Daily {
+    margin-top: 160px;
+    height: 250px;
+    width: 950px;
+} 
+
+.charts .Daily .head {
+    margin-bottom: 30px;
+    font-size: 20px
+}
+
+.charts .Daily .head i {
+    color: rgb(132, 142, 156);
+    font-size: 14px;
+}
+.charts .Net {
+    margin-top: 160px;
+    height: 250px;
+    width: 384px;
+} 
+
+.charts .Net .head {
+    margin-bottom: 30px;
+    font-size: 20px
+}
+
+.charts .Net .head i {
+    color: rgb(132, 142, 156);
+    font-size: 14px;
+}
+
+
+.charts .Profits {
+    height: 250px;
+    width: 950px;
+    margin-top: 160px;
+}
+
+.charts .Profits .head {
+    margin-bottom: 30px;
+}
+
+.charts .Profits .head h3 {
+    margin-right: 10px;
+}
+
+.charts .Profits .head h3 i {
+    margin-left: 3px;
+    font-size: 12px;
+    color: rgb(132, 142, 156);
+}
+/* charts */
+/* table */
+.table {
+    margin-top: 160px;
+}
+
+.table .head {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.315);
+    padding: 20px;
+    border-bottom: 1px solid rgb(132 142 156 / 56%);
+    border-top: 1px solid rgb(132 142 156 / 56%);
+    justify-content: flex-start;
+}
+
+.table .head span {
+    width: calc(100% / 4);
+    color: var(--sidebar-color);
+    font-size: 14px;
+}
+
+.table .body .row {
+    height: 57px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border-top: 1px solid rgb(132 142 156 / 28%);
+}
+
+.table .body .row:hover {
+    background-color: rgba(0, 0, 0, 0.315);
+}
+
+.table .body .row span {
+    width: calc(100% / 4);
+    color: var(--text-color);
+}
+/* table */
+/* main */

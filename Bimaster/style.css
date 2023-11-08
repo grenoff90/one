@@ -1,0 +1,482 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: #fcd535;
+    --background-color: rgb(24, 26, 32);
+    --text-color: #eaecef;
+    --sidebar-color: rgb(132, 142, 156);
+    --border-color: #e5e7eb;
+
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+header {
+    background-color: var(--background-color);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    /* width: fit-content; */
+}
+
+header .left {
+    display: flex;
+    align-items: center;
+}
+
+header .left .logo {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+
+
+header .left ul {
+    display: flex;
+    align-items: center;
+}
+
+header .left ul li a {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: 0.4s;
+}
+
+header .left ul li a i {
+    font-size: 8px;
+    margin-left: 5px;
+}
+
+header .right ul {
+    display: flex;
+    align-items: center;
+}
+
+header .right ul li:not(li.btn) {
+    padding: 10px 15px;
+    font-size: 14px;
+    
+}
+
+header .right ul li i {
+    color: var(--text-color);
+    transition: 0.4s;
+}
+
+header .right ul li a {
+    transition: 0.4s;
+}
+
+
+header .right ul li.btn a {
+    color: var(--background-color);
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+header .right ul li.btn i {
+    margin-right: 5px;
+    color: var(--background-color);
+}
+
+header .right ul li.user a i {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-size: 12px;
+}
+
+header .right ul li:not(li.user, li.btn):hover i {
+    color: var(--main-color);
+} 
+
+header ul li:hover a {
+    color: var(--main-color);
+}
+
+/* header */
+main {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+aside {
+    width: 240px;
+}
+
+aside ul {
+    padding: 25px 0;
+    position: relative;
+}
+
+
+aside ul.top::after {
+    content: "";
+    width: 200px;
+    height: 2px ;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    background-color: rgb(132 142 156 / 16%);
+}
+
+aside ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0 15px 24px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: var(--sidebar-color);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: 0.4s;
+}
+
+aside ul li a:hover {
+    background-color: rgb(132 142 156 / 16%);
+}
+
+aside ul li.active a {
+    background-color: rgb(132 142 156 / 16%);
+    color: var(--text-color);
+    /* font-weight: bold; */
+}
+
+aside ul li a span {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* content */
+.content {
+    padding: 25px 60px;
+}
+
+.content .Estimated-Balance {
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgb(132 142 156 / 16%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.content .Estimated-Balance .left h3 {
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.content .Estimated-Balance .left h3 i {
+    background-color: rgb(43, 49, 57);
+    padding: 5px;
+    color: var(--sidebar-color);
+    font-size: 14px;
+}
+
+.content .Estimated-Balance .left .balance {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--text-color);
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.content .Estimated-Balance .left .balance span:first-child {
+    font-size: 24px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.content .Estimated-Balance .left .balance span:last-child {
+    font-size: 24px;
+}
+.content .Estimated-Balance .left .balance span:last-child i {
+    font-size: 10px;
+    color: var(--sidebar-color);
+    margin-left: 3px;
+}
+
+.content .Estimated-Balance .left > span {
+    color: rgb(132, 142, 156);
+    font-size: 14px;
+    
+}
+
+.content .Estimated-Balance .right ul {
+    display: flex;
+    align-items: center;
+}
+.content .Estimated-Balance .right ul li {
+    padding: 8px 12px;
+    background-color: rgb(96 125 139 / 23%);
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+} 
+
+.content .Estimated-Balance .right ul li:not(:last-child) {
+    margin-right: 10px;
+}   
+
+/* assets */
+.content .my-assets {
+    padding: 25px 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(132 142 156 / 16%);
+    margin-top: 30px;
+}
+
+.content .my-assets > h3 {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+.content .my-assets .options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0 0;
+    padding-left: 10px;
+}
+
+.content .my-assets .options .view {
+    display: flex;
+    align-items: center;
+}
+
+.content .my-assets .options .view li {
+    color: var(--sidebar-color);
+    margin-right: 20px;
+}
+
+.content .my-assets .options .view li.active {
+    padding: 8px 12px;
+    background-color: rgb(96 125 139 / 23%);
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.content .my-assets .options .hide {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.content .my-assets .table .head {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.content .my-assets .table .head span {
+    width: 25%;
+    color: var(--sidebar-color);
+    font-size: 12px;
+    padding: 30px 0 20px;
+    padding-right: 10px;
+}
+
+.content .my-assets .table .head .wallet {
+    width: 50%;
+}
+
+.content .my-assets .table .head span:not(span.wallet) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content .my-assets .table .head span:nth-child(2) {
+    justify-content: flex-start !important;
+}
+
+.content .my-assets .table .body .row {
+    border-radius: 12px;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+.content .my-assets .table .body .row:hover {
+    background-color: rgba(0, 0, 0, 0.315);
+}
+
+.content .my-assets .table .body .row ul {
+    display: flex;
+    align-items: center;
+}
+
+.content .my-assets .table .body .row ul li {
+    width: 25%;
+    color: var(--text-color);
+}
+
+.content .my-assets .table .body .row ul li:first-child {
+    font-weight: bold;
+}
+
+.content .my-assets .table .body .row ul li:first-child i {
+    margin-right: 10px;
+}
+
+.content .my-assets .table .body .row ul li:not(li.wallet) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content .my-assets .table .body .row ul li:last-child {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.content .my-assets .table .body .row ul li:nth-child(2) {
+    justify-content: flex-start !important;
+}
+
+
+.content .my-assets .table .body .row ul li:last-child span:last-child {
+    color: var(--sidebar-color);
+    margin-top: 10px;
+}
+
+
+.content .my-assets .table .body .row ul li.wallet {
+    width: 50%;
+}
+ /* assets */
+/* transaction */
+.content .transaction  {
+    padding: 25px 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(132 142 156 / 16%);
+    margin-top: 30px;
+}
+
+.content .transaction .head {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.content .transaction .head a {
+    padding: 8px 12px;
+    background-color: rgb(96 125 139 / 23%);
+    border-radius: 4px;
+    color: var(--text-color);
+}
+
+.content .transaction .cont .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.content .transaction .cont .row:hover {
+    background-color: rgba(0, 0, 0, 0.315);
+}
+
+.content .transaction .cont .row .left {
+    display: flex;
+    align-items: center;
+}
+
+.content .transaction .cont .row .left i {
+    padding: 10px;
+    background-color: rgb(96 125 139 / 23%);
+    color: var(--sidebar-color);
+    border-radius: 6px;
+}
+.content .transaction .cont .row .left .date {
+    margin-left: 10px;
+}
+
+.content .transaction .cont .row .left .date h3 {
+    color: var(--text-color);
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.content .transaction .cont .row .left .date span {
+    color: var(--sidebar-color);
+    font-size: 12px;
+}
+
+.content .transaction .cont .row .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.content .transaction .cont .row .right h3 {
+    color: var(--text-color);
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.content .transaction .cont .row .right > span {
+    color: var(--sidebar-color);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+.content .transaction .cont .row .right > span span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #34e933;
+    margin-right: 5px;
+}
+/* transaction */
+@media (min-width: 1600px) {
+    .content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        padding: 25px;
+    }
+    .content .transaction {
+        margin-top: 0;
+        margin-left: 30px;
+    }
+}
+/* content */
