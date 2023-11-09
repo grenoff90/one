@@ -18,11 +18,11 @@ Chart.defaults.font.size = 10;
 let CulumativeChart = new Chart(Culumative, {
     type: 'line',
     data: {
-      labels: ["",'10-31', '11-01', '11-02', '11-03', '11-04', '11-05', '11-06', ""],
+      labels: ["",'11-03', '11-04', '11-05', '11-06', '11-07', '11-08', '11-09', ""],
       datasets: [
         {
         label: 'Cumulative BTC Trend ',
-        data: [,1.3, 1.15, 1.64, 3.93, 2.51, 1.86, 2.21,],
+        data: [,-0.63, 0.35, 0.2, 0.3, 1.31, 1.97, 5.06,],
         borderWidth: 2,
         pointStyle:"circle",
         borderColor: "#f7a600",
@@ -32,7 +32,7 @@ let CulumativeChart = new Chart(Culumative, {
       },
       {
         label: 'Cumulative PNL(%)',
-        data: [,-0.31, 0, 1.1, 1.96, 3, 2.33, 3.34,],
+        data: [, 1.96, 3, 2.33, 3.34, 3.27, 4.23, 5.07 ],
         borderWidth: 1.,
         pointStyle:"circle",
         borderColor: "#ffc107",
@@ -175,12 +175,12 @@ const Daily = document.getElementById('Daily');
 let dailyChart = new Chart(Daily, {
   type: 'bar',
   data: {
-    labels: ["",'10-31', ,'11-01', ,'11-02', ,'11-03', ,'11-04', ,'11-05', ,'11-06', ""],
+    labels: ["",'11-03', ,'11-04', ,'11-05', ,'11-06', ,'11-07', ,'11-08', ,'11-09', ""],
     datasets: [{
       label: 'Daily PNL',
-      data: [,-10.31, ,2.1, ,36.6, ,28.2, ,33.5, ,-21.5, ,16.8,],
+      data: [ ,28.2, ,33.5, ,-21.5, ,16.8, , -1.5, , 34.2, , 29.71, ],
       borderWidth: 1,
-      backgroundColor: ["","#ef454a", ,"#20b26c", ,"#20b26c", ,"#20b26c", ,"#20b26c", ,"#ef454a", ,"#20b26c",""]
+      backgroundColor: ["" ,"#20b26c", ,"#20b26c", ,"#ef454a", ,"#20b26c", ,"#ef454a", ,"#20b26c", ,"#20b26c",  ""]
     }]
   },
   options: {
@@ -218,11 +218,11 @@ const Net = document.getElementById("Net");
 let NetChart = new Chart(Net, {
   type: 'line',
   data: {
-    labels: ["",'10-31', '11-01', '11-02', '11-03', '11-04', '11-05', '11-06', ""],
+    labels: ["",'11-03', '11-04', '11-05', '11-06', '11-07', '11-08', '11-09', ""],
     datasets: [
       {
       label: 'Net Worth',
-      data: [,3318.9, 3319.3, 3355.8, 3392.3, 3420.5, 3382, 3404,],
+      data: [, 3392.3, 3420.5, 3382, 3404, 3402.5, 3436.7, 3466.4, ],
       borderWidth: 2,
       pointStyle:"circle",
       borderColor: "#f7a600",
@@ -274,11 +274,11 @@ const profits = document.getElementById("Profits");
 let profitsChart = new Chart(profits, {
     type: 'line',
     data: {
-      labels: ["",'10-31', '11-01', '11-02', '11-03', '11-04', '11-05', '11-06', ""],
+      labels: ["",'11-03', '11-04', '11-05', '11-06', '11-07', '11-08', '11-09', ""],
       datasets: [
       {
         label: 'Profits',
-        data: [,0, 0, 36.6, 28.2, 33.5, -21.5, 0,],
+        data: [,28.2, 61.7, 40.2, 57, 55.5, 89.7, 112.4,],
         borderWidth: 0.8,
         pointStyle:"circle",
         borderColor: "#ffc107",
@@ -340,40 +340,229 @@ daysLi.forEach((li) => {
     e.currentTarget.classList.add("active");
     if (e.currentTarget.textContent.includes("30"))
     {
+      document.querySelector(".three").textContent = "+16.29%"
+      if (e.currentTarget.textContent.includes("7")) {
+      document.querySelector(".three").textContent = "+3.34%"
+      }
+      document.querySelector(".four").innerHTML = `
+      <div class="row">
+      <span>2023-11-09</span>
+      <span>$27.9</span>
+      <span>$499.18</span>
+      <span>16.29%</span>
+  </div>
+      <div class="row">
+      <span>2023-11-08</span>
+      <span>$ 34.2</span>
+      <span>$482.4</span>
+      <span>
+      15.89%</span>
+  </div>
+  <div class="row">
+      <span>2023-11-07</span>
+      <span>$ -1.5</span>
+      <span>$461.6</span>
+      <span>15.46%</span>
+  </div>
+  <div class="row">
+      <span>2023-11-06</span>
+      <span>$ 16.8</span>
+      <span>$464.94</span>
+      <span>15.76%</span>
+  </div>
+  <div class="row">
+      <span>2023-11-05</span>
+      <span>$ -21.5</span>
+      <span>$463.46</span>
+      <span>15.7%</span>
+  </div>
+  <div class="row">
+      <span>2023-11-04</span>
+      <span>$ 33.5</span>
+      <span>$484.12</span>
+      <span>16.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-11-03</span>
+      <span>$ 28.2</span>
+      <span>$451.65</span>
+      <span>15.3%</span>
+  </div>
+  <div class="row">
+      <span>2023-11-02</span>
+      <span>$ 36.6</span>
+      <span>$419.18</span>
+      <span>14.2%</span>
+  </div>
+  <div class="row">
+      <span>2023-11-01</span>
+      <span>$ 2.1</span>
+      <span>$383</span>
+      <span>13%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-31</span>
+      <span>$  -10.31</span>
+      <span>$381.24</span>
+      <span>12.9%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-30</span>
+      <span>$ 41.6</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-29</span>
+      <span>$ 0.02</span>
+      <span>$56.6</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-28</span>
+      <span>$ 18.6</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-27</span>
+      <span>$ 17.72</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-26</span>
+      <span>$ 24.28</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-25</span>
+      <span>$ -1.5</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-24</span>
+      <span>$ 18.73</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-23</span>
+      <span>$ 17.4</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-22</span>
+      <span>$ 35.42</span>
+      <span>$37.27</span>
+      <span>6.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-21</span>
+      <span>$ 18.2</span>
+      <span>$37.27</span>
+      <span>14.%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-20</span>
+      <span>$ 16.8</span>
+      <span>$37.27</span>
+      <span>13.4%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-19</span>
+      <span>$ 0</span>
+      <span>$37.27</span>
+      <span>13.09%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-18</span>
+      <span>$ -21.5</span>
+      <span>$37.27</span>
+      <span>13.04%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-17</span>
+      <span>$ 0.02</span>
+      <span>$37.27</span>
+      <span>13.56%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-16</span>
+      <span>$33.5</span>
+      <span>$37.27</span>
+      <span>13.64%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-15</span>
+      <span>$ 0.02</span>
+      <span>$37.27</span>
+      <span>12.47%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-14</span>
+      <span>$ 28.2</span>
+      <span>$275.54</span>
+      <span>12.89%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-13</span>
+      <span>$ 0</span>
+      <span>$241.54</span>
+      <span>12.75%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-12</span>
+      <span>$ 36.6</span>
+      <span>$248.97</span>
+      <span>12.99%</span>
+  </div>
+  <div class="row">
+      <span>2023-10-11</span>
+      <span>$ 0 </span>
+      <span>$205.35</span>
+      <span>11.67%</span>
+  </div>
+  
+  
+      `
       charts.forEach((chart) => {
         chart.data.labels = ["",
-        "10-08",
-        "",
-        "",
+        
         "10-11",
         "",
         "",
-        "10-14",
         "",
         "",
-        "10-17",
+        "10-16",
         "",
         "",
-        "10-20",
         "",
         "",
-        "10-23",
+        "10-21",
+        "",
+        "",
         "",
         "",
         "10-26",
         "",
         "",
-        "10-29",
         "",
+        "",
+        '10-31',
         '',
-        '11-01',
         '',
         '',
         '11-05',
         '',
         '',
-        "11-08",
-        ""];
+        "",
+        "11-09",
+        ""
+        ];
         if (chart.data.datasets[0].label == 'Cumulative PNL(%)')
         {
           if (chart.data.datasets[0].data.length > 20)
@@ -384,32 +573,40 @@ daysLi.forEach((li) => {
             chart.data.datasets[1].data.push(2.56, 2.89, 5, 9, 24, 60, 60, 11 , 5, 15, 13, 31, 60, 20, 22, 24, 16, 18, 32.5, 48, 3, 0, 10);
           }
   
-        }else if (chart.data.datasets[0].label == "Daily PNL")
-        {
-          chart.data.datasets[0].backgroundColor = ["#20b26c", "#ef454a"  ,"#20b26c" ,"#20b26c" ,"#20b26c" ,"#20b26c" ,"#ef454a" ,"#20b26c",
-          "#20b26c",
-          "#20b26c",
-          "#ef454a",
-          "#ef454a",
-          "#20b26c",
-          "#20b26c",
-          "#20b26c",
-          "#ef454a",
-          "#20b26c",
-          "#20b26c",
-          "#ef454a",
-          "#20b26c",
-          "#20b26c",
-          "#20b26c",
-          "#20b26c",
-          "#20b26c",
-          "#ef454a",
-          "#ef454a",
-          "#20b26c",
-          "#20b26c",
-          "#20b26c"
+        }else if (chart.data.datasets[0].label == "Daily PNL") {
+          chart.data.datasets[0].backgroundColor = [];
+          chart.data.datasets[0].data = [];
+        
+          var newBackgroundColor = [" ","#ef454a", "#20b26c", "#ef454a", "#20b26c", "#20b26c", "#20b26c", "#20b26c", "#ef454a",
+            "#20b26c",
+            "#ef454a",
+            "#20b26c",
+            "#20b26c",
+            "#ef454a",
+            "#20b26c",
+            "#20b26c",
+            "#20b26c",
+            "#20b26c",
+            "#20b26c",
+            "#ef454a",
+            "#ef454a",
+            "#20b26c",
+            "#20b26c",
+            "#20b26c",
+            "#20b26c",
+            "#ef454a",
+            "#20b26c",
+            "#ef454a",
+            "#20b26c",
+            "#20b26c",
+            "#ef454a",
+            ""
           ];
-          chart.data.datasets[0].data.push(18.2, -6.3, 17.40, 18.73, -1.5, 24.68, 17.72, 18.6 , 56.6, 41.6, -6.8, -10.31, 2.1, 36.6, 28.2, 33.5, -21.5, 16.8);
+        
+          var newData = [ , -6.89 , 17.3, -9.15 , 32,3 , 28.5 , 30 ,-22 ,18.2 ,-6.38, 17.40 ,18.73, -1.5, 24.68, 17.72, 18.6, 56.6, 41.6, -6.8, -10.31, 2.1, 36.6, 28.2, 33.5, -21.5, 16.8, -1.5, 34.2, 29.71 , ];
+        
+          Array.prototype.push.apply(chart.data.datasets[0].backgroundColor, newBackgroundColor);
+          Array.prototype.push.apply(chart.data.datasets[0].data, newData);
         }
         else {
           if (chart.data.datasets[0].data.length > 20)
@@ -418,8 +615,9 @@ daysLi.forEach((li) => {
             return;
             
           }else {
-            chart.data.datasets[0].data.push(2.73, 2.09, 1.71, 1.44, 2.85, 6.27, 7.13, 7.43 , 18.45, 21.51, 23.56, 22.33, 21.4, 22.07, 23.67, 23.48, 24.08, 26.88, 25.15, 24.35, 25.41, 25.53, 25.02);
-            chart.data.datasets[1].data.push(1.94, 2.54, 2.35, 2.96, 3.53, 3.49, 4.3, 4.9 , 6.5, 7.7, 9.03, 8.79, 9.99, 10.73, 11.13, 11.72, 12.29, 12.43, 12.95, 13.55, 14.14, 13.88, 13.91);
+            chart.data.datasets[0].data.push(2.73, 2.09, 1.71, 1.44, 2.85, 6.27, 7.13, 7.43 , 18.45, 21.51, 23.56, 22.33, 21.4, 22.07, 23.67, 23.48, 24.08, 28, 27.82, 27.95, 29.24, 30.07, 33.38);
+            chart.data.datasets[1].data.push(1.94, 2.54, 2.35, 2.96, 3.53, 3.49, 4.3, 4.9 , 6.5, 7.7, 9.03, 8.79, 9.99, 10.73, 11.13, 10.92, 12.29, 12.43, 12.95, 13.55, 14.14, 
+              15.89, 16.29);
           }
           
         }
@@ -494,44 +692,44 @@ daysLi.forEach((li) => {
         }
         chart.update();
       });
-      document.querySelector(".table .body").innerHTML = `
-      <div class="row">
-      <span>2023-11-02</span>
-      <span>$ 0.02</span>
-      <span>$37.27</span>
-      <span>6.4%</span>
-  </div>
-  <div class="row">
-      <span>2023-11-03</span>
-      <span>$ 0.02</span>
-      <span>$37.27</span>
-      <span>6.4%</span>
-  </div>
-  <div class="row">
-      <span>2023-10-18</span>
-      <span>$ 0.02</span>
-      <span>$37.27</span>
-      <span>6.4%</span>
-  </div>
-  <div class="row">
-      <span>2023-10-17</span>
-      <span>$ 0.02</span>
-      <span>$37.27</span>
-      <span>6.4%</span>
-  </div>
-  <div class="row">
-      <span>2023-10-16</span>
-      <span>$ 0.02</span>
-      <span>$37.27</span>
-      <span>6.4%</span>
-  </div>
-  <div class="row">
-      <span>2023-10-15</span>
-      <span>$ 0.02</span>
-      <span>$37.27</span>
-      <span>6.4%</span>
-  </div>
-      `
+  //     document.querySelector(".table .body").innerHTML = `
+  //     <div class="row">
+  //     <span>2023-11-02</span>
+  //     <span>$ 0.02</span>
+  //     <span>$37.27</span>
+  //     <span>6.4%</span>
+  // </div>
+  // <div class="row">
+  //     <span>2023-11-03</span>
+  //     <span>$ 0.02</span>
+  //     <span>$37.27</span>
+  //     <span>6.4%</span>
+  // </div>
+  // <div class="row">
+  //     <span>2023-10-18</span>
+  //     <span>$ 0.02</span>
+  //     <span>$37.27</span>
+  //     <span>6.4%</span>
+  // </div>
+  // <div class="row">
+  //     <span>2023-10-17</span>
+  //     <span>$ 0.02</span>
+  //     <span>$37.27</span>
+  //     <span>6.4%</span>
+  // </div>
+  // <div class="row">
+  //     <span>2023-10-16</span>
+  //     <span>$ 0.02</span>
+  //     <span>$37.27</span>
+  //     <span>6.4%</span>
+  // </div>
+  // <div class="row">
+  //     <span>2023-10-15</span>
+  //     <span>$ 0.02</span>
+  //     <span>$37.27</span>
+  //     <span>6.4%</span>
+  // </div>
+  //     `
     }
   });
 });
