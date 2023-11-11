@@ -18,11 +18,11 @@ Chart.defaults.font.size = 10;
 let CulumativeChart = new Chart(Culumative, {
     type: 'line',
     data: {
-      labels: ["",'11-03', '11-04', '11-05', '11-06', '11-07', '11-08', '11-09', ""],
+      labels: ["", '11-05', '11-06', '11-07', '11-08', '11-09', '11-10', '11-11', ""],
       datasets: [
         {
         label: 'Cumulative BTC Trend ',
-        data: [,-0.63, 0.35, 0.2, 0.3, 1.31, 1.97, 5.06,],
+        data: [,-0.14, -0.04, 0.96, 1.61, 4.64, 6.38, 5.74,],
         borderWidth: 2,
         pointStyle:"circle",
         borderColor: "#f7a600",
@@ -32,7 +32,7 @@ let CulumativeChart = new Chart(Culumative, {
       },
       {
         label: 'Cumulative PNL(%)',
-        data: [, 1.96, 3, 2.33, 3.34, 3.27, 4.23, 5.07 ],
+        data: [,  1.02, 1.94, 2.47, 2.23, 3.24, 3.45, 3.43, ],
         borderWidth: 1.,
         pointStyle:"circle",
         borderColor: "#ffc107",
@@ -175,12 +175,12 @@ const Daily = document.getElementById('Daily');
 let dailyChart = new Chart(Daily, {
   type: 'bar',
   data: {
-    labels: ["",'11-03', ,'11-04', ,'11-05', ,'11-06', ,'11-07', ,'11-08', ,'11-09', ""],
+    labels: ["", '11-05', ,'11-06', ,'11-07', ,'11-08', ,'11-09', ,"11-10", , '11-11', ""],
     datasets: [{
       label: 'Daily PNL',
-      data: [ ,28.2, ,33.5, ,-21.5, ,16.8, , -1.5, , 34.2, , 29.71, ],
+      data: [ ,33.5, ,29.5, ,16.8, , -5.5, , 34.2, ,6.94 , , -0.2],
       borderWidth: 1,
-      backgroundColor: ["" ,"#20b26c", ,"#20b26c", ,"#ef454a", ,"#20b26c", ,"#ef454a", ,"#20b26c", ,"#20b26c",  ""]
+      backgroundColor: ["" ,"#20b26c", ,"#20b26c", ,"#20b26c", ,"#ef454a", ,"#20b26c", ,"#20b26c", ,"#ef454a",  ""]
     }]
   },
   options: {
@@ -218,11 +218,11 @@ const Net = document.getElementById("Net");
 let NetChart = new Chart(Net, {
   type: 'line',
   data: {
-    labels: ["",'11-03', '11-04', '11-05', '11-06', '11-07', '11-08', '11-09', ""],
+    labels: ["", '11-05', '11-06', '11-07', '11-08', '11-09', '11-10', '11-11', ""],
     datasets: [
       {
       label: 'Net Worth',
-      data: [, 3392.3, 3420.5, 3382, 3404, 3402.5, 3436.7, 3466.4, ],
+      data: [, 3384.3, 3414, 3430.7, 3425.26, 3459.46, 3466.7, 3466.4, ],
       borderWidth: 2,
       pointStyle:"circle",
       borderColor: "#f7a600",
@@ -274,11 +274,11 @@ const profits = document.getElementById("Profits");
 let profitsChart = new Chart(profits, {
     type: 'line',
     data: {
-      labels: ["",'11-03', '11-04', '11-05', '11-06', '11-07', '11-08', '11-09', ""],
+      labels: ["", '11-05', '11-06', '11-07', '11-08', '11-09', '11-10', '11-11', ""],
       datasets: [
       {
         label: 'Profits',
-        data: [,28.2, 61.7, 40.2, 57, 55.5, 89.7, 112.4,],
+        data: [,33.5, 63, 79.8, 57, 74.3, 108.5, 115.44],
         borderWidth: 0.8,
         pointStyle:"circle",
         borderColor: "#ffc107",
@@ -532,31 +532,31 @@ daysLi.forEach((li) => {
       charts.forEach((chart) => {
         chart.data.labels = ["",
         
-        "10-11",
+        "10-13",
         "",
         "",
         "",
         "",
-        "10-16",
+        "10-18",
         "",
         "",
         "",
         "",
-        "10-21",
+        "10-23",
         "",
         "",
         "",
         "",
-        "10-26",
+        "10-28",
         "",
         "",
         "",
         "",
-        '10-31',
+        '11-02',
         '',
         '',
         '',
-        '11-05',
+        '11-07',
         '',
         '',
         "",
@@ -569,7 +569,7 @@ daysLi.forEach((li) => {
           {
             return;
           }else {
-            chart.data.datasets[0].data.push(-2.25, 2.59, 22.1, 1.93, 33.5, 6.79, 7.66, 7.95 , 19.3, 22.11, 24.17, 22.93, 21.99, 22.67, 24.27, 24.9, 24.69, 27.5, 25.76, 23.71, 30, 36, 0);
+            chart.data.datasets[0].data.push(10.87, 11.77, 23.58, 26.77, 28.91, 27.62, 26.65, 27.35 , 29.02, 28.83, 29.45, 32.36, 30.56, 29.73, 31.02, 30.83, 30.96, 32.28, 23.13, 37.13, 39.39, 38.83, 0);
             chart.data.datasets[1].data.push(2.56, 2.89, 5, 9, 24, 60, 60, 11 , 5, 15, 13, 31, 60, 20, 22, 24, 16, 18, 32.5, 48, 3, 0, 10);
           }
   
@@ -594,16 +594,16 @@ daysLi.forEach((li) => {
             "#20b26c",
             "#20b26c",
             "#20b26c",
-            "#ef454a",
             "#20b26c",
             "#ef454a",
+            "#20b26c",
             "#20b26c",
             "#20b26c",
             "#ef454a",
             ""
           ];
         
-          var newData = [ , -6.89 , 17.3, -9.15 , 32,3 , 28.5 , 30 ,-22 ,18.2 ,-6.38, 17.40 ,18.73, -1.5, 24.68, 17.72, 18.6, 56.6, 41.6, -6.8, -10.31, 2.1, 36.6, 28.2, 33.5, -21.5, 16.8, -1.5, 34.2, 29.71 , ];
+          var newData = [ , -6.89 , 17.3, -9.15 , 32,3 , 28.5 , 30 ,-22 ,18.2 ,-6.38, 17.40 ,18.73, -1.5, 24.68, 17.72, 18.6, 56.6, 41.6, -6.8, -10.31, 2.1, 36.6, 33.5, 29.5, 16.8, -5.5, 34.2, 6.94, -0.2 , ];
         
           Array.prototype.push.apply(chart.data.datasets[0].backgroundColor, newBackgroundColor);
           Array.prototype.push.apply(chart.data.datasets[0].data, newData);
