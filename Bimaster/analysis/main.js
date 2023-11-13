@@ -18,11 +18,11 @@ Chart.defaults.font.size = 10;
 let CulumativeChart = new Chart(Culumative, {
     type: 'line',
     data: {
-      labels: ["",  '11-06', '11-07', '11-08', '11-09', '11-10', '11-11', '11-12', ""],
+      labels: ["",  '11-07', '11-08', '11-09', '11-10', '11-11', '11-12', '11-13', ""],
       datasets: [
         {
         label: 'Cumulative BTC Trend ',
-        data: [,0.09, 1.1, 1.75, 4.81, 6.53, 6.04, 5.96,],
+        data: [,1, 1.65, 4.71, 6.43, 5.94, 5.75, 5.31,],
         borderWidth: 2,
         pointStyle:"circle",
         borderColor: "#f7a600",
@@ -32,7 +32,7 @@ let CulumativeChart = new Chart(Culumative, {
       },
       {
         label: 'Cumulative PNL(%)',
-        data: [,  0.88, 1.12, 1.02, 2.19, 2.74, 2.72, 3.13, ],
+        data: [,  0.51, 0.34, 1.52, 2.03, 2.01, 2.23, 2.23, ],
         borderWidth: 1.,
         pointStyle:"circle",
         borderColor: "#ffc107",
@@ -175,12 +175,12 @@ const Daily = document.getElementById('Daily');
 let dailyChart = new Chart(Daily, {
   type: 'bar',
   data: {
-    labels: ["", '11-06', ,'11-07', ,'11-08', ,'11-09', ,"11-10", , '11-11', , '11-12',  ""],
+    labels: ["", '11-07', ,'11-08', ,'11-09', ,"11-10", , '11-11', , '11-12', ,'11-13',  ""],
     datasets: [{
       label: 'Daily PNL',
-      data: [ ,29.5, ,16.8, , -5.5, , 39.2, ,16.94 , , -0.2 , , 7.13],
+      data: [  ,16.8, , -5.5, , 39.2, ,16.94 , , -0.2 , , 7.13, ,-0.02,],
       borderWidth: 1,
-      backgroundColor: ["" ,"#20b26c", ,"#20b26c", ,"#ef454a", ,"#20b26c", ,"#20b26c", ,"#ef454a", ,"#20b26c",  ""]
+      backgroundColor: ["" ,"#20b26c", ,"#ef454a", ,"#20b26c", ,"#20b26c", ,"#ef454a", ,"#20b26c",  ,"#ef454a", ""]
     }]
   },
   options: {
@@ -218,7 +218,7 @@ const Net = document.getElementById("Net");
 let NetChart = new Chart(Net, {
   type: 'line',
   data: {
-    labels: ["",  '11-06', '11-07', '11-08', '11-09', '11-10', '11-11', '11-12', ""],
+    labels: ["",  '11-07', '11-08', '11-09', '11-10', '11-11', '11-12', '11-13', ""],
     datasets: [
       {
       label: 'Net Worth',
@@ -274,11 +274,11 @@ const profits = document.getElementById("Profits");
 let profitsChart = new Chart(profits, {
     type: 'line',
     data: {
-      labels: ["",  '11-06', '11-07', '11-08', '11-09', '11-10', '11-11', '11-12', ""],
+      labels: ["",  '11-07', '11-08', '11-09', '11-10', '11-11', '11-12', '11-13', ""],
       datasets: [
       {
         label: 'Profits',
-        data: [,29.5, 46.3, 40.8, 80,  96.94, 96.92, 104.15],
+        data: [,16.8, 11.3, 50.5, 67.44,  67.42, 74.55, 74.53],
         borderWidth: 0.8,
         pointStyle:"circle",
         borderColor: "#ffc107",
